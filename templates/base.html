@@ -1,10 +1,12 @@
+{% load static %}
 <html>
     <head>
         <title>Bloggie</title>
+        <link href="{% static 'css/style.css' %}" rel="stylesheet">
     </head>
     <body>
         <header>
-            <h1> <a href="{% url 'home' %}">Bloggie</a> </h1>
+            <h1> <a href="{% url 'home' %}" id="website-name">Bloggie</a> </h1>
         </header>
 
         {% block content %}
