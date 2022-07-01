@@ -4,6 +4,7 @@
     <div class="post-content">
         <a class="post-title" href="">{{ post.title }}</a>
         <p class="post-text">{{ post.text }}</p>
-        <hr>
     </div>
+    <a href="{% url 'post_edit' post.pk %}">+ Edit Blog</a>
+    <a href="{% url 'post_delete' post.pk %}">- Delete Blog</a>
 {% endblock %}

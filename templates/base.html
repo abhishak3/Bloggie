@@ -6,7 +6,12 @@
     </head>
     <body>
         <header>
-            <h1> <a href="{% url 'home' %}" id="website-name">Bloggie</a> </h1>
+            <div class="navbar-left">
+                <h1> <a href="{% url 'home' %}" id="website-name">Bloggie</a> </h1>
+            </div>
+            <div class="navbar-right">
+                <a href="{% url 'post_new' %}">+ New Post</a> </h1>
+            </div>
         </header>
 
         {% block content %}
