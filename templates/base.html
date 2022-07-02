@@ -7,12 +7,21 @@
     <body>
         <header>
             <div class="navbar-left">
-                <h1> <a href="{% url 'home' %}" id="website-name">Bloggie</a> </h1>
+                <h1>
+                    <a href="{% url 'home' %}" id="website-name">Bloggie</a> </h1>
             </div>
             <div class="navbar-right">
                 <a href="{% url 'post_new' %}">+ New Post</a> </h1>
             </div>
         </header>
+        {% if user.is_authenticated %}
+            Logged in as {{ user.username }}.<br>
+            <a href="{% url 'logout' %}">Logout</a>
+        {% else %}
+            You are not logged in.<br>
+            <a href="{% url 'signup' %}">Sign Up</a>
+            <a href="{% url 'login' %}">Login</a>
+        {% endif %}
 
         {% block content %}
         {% endblock %}
